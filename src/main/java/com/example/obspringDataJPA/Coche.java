@@ -1,10 +1,24 @@
 package com.example.obspringDataJPA;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+// @Entity -  para indicar que una TABLA en nuestra BBDD
+@Entity
+
 public class Coche {
 
     // 1. Atributos
     // atributos encapsulados por private
-    private Long id; //es nuestra primary key de la db
+    // @Id es para decirle que es una clave primaria
+    @Id
+
+    // @GeneratedValue(strategy = GenerationType.IDENTITY) es para que me genere la BBDD el valor del ID
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
     private String manufacturer;
     private String model;
     private Integer year;
